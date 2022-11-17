@@ -58,6 +58,7 @@ def find_afterparties():
     #
     # - Replace the empty list in `events` with the list of events from your
     #   search results
+    res = requests.get(url, params=payload)
 
     data = {'Test': ['This is just some test data'],
             'page': {'totalElements': 1}}
