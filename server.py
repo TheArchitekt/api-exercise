@@ -65,7 +65,7 @@ def find_afterparties():
 
 
     if '_embedded' in data:
-        events = data['embedded']['events']
+        events = data['_embedded']['events']
     else:
         events = []
 
