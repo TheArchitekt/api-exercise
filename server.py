@@ -60,9 +60,14 @@ def find_afterparties():
     #   search results
     res = requests.get(url, params=payload)
 
-    data = {'Test': ['This is just some test data'],
-            'page': {'totalElements': 1}}
-    events = []
+    data = res.json()
+
+
+
+    if '_embedded' in data:
+        events = data['embedded']['events']
+    else:
+        events = []
 
     return render_template('search-results.html',
                            pformat=pformat,
